@@ -66,6 +66,9 @@ export default {
   created: async function () {
     this.getList();
   },
+  activated() {
+    this.getList()
+  }
 }
 
 </script>

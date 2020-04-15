@@ -13,6 +13,7 @@ Vue.prototype.$http = axios
 Vue.prototype.$qs = qs
 Vue.config.productionTip = false
 axios.defaults.baseURL = 'http://localhost:3000/api'
+Vue.prototype.$imgURL = 'http://localhost:3000/image'
 axios.interceptors.request.use(function (config) {
   // 所有请求之前都要执行的操作
   // console.log('axios 的请求拦截器', config)
