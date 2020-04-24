@@ -31,19 +31,19 @@
           class="img-box"
 				>
           <div class="img-item">
-            <img :src="form.yingyeImg" alt="" @click="handlePreview(form.yingyeImg)">
+            <img :src="$imgURL + form.yingyeImg" alt="" @click="handlePreview(form.yingyeImg)">
                  营业执照
           </div>
           <div class="img-item" @click="handlePreview(form.idcardFront)">
-            <img :src="form.idcardFront" alt="">
+            <img :src="$imgURL + form.idcardFront" alt="">
             身份证人像面
           </div>
           <div class="img-item" @click="handlePreview(form.idcardBack)">
-            <img :src="form.idcardBack" alt="">
+            <img :src="$imgURL + form.idcardBack" alt="">
             身份证国徽面
           </div>
           <div class="img-item" @click="handlePreview(form.idcardHand)">
-            <img :src="form.idcardHand" alt="">
+            <img :src="$imgURL + form.idcardHand" alt="">
             身份证
           </div>
         </elFormItem>
