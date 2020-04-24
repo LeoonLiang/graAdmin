@@ -147,7 +147,7 @@ export default {
     },
 
     handlePreview(image) {
-			this.$refs.imagePreviewModal.show(image)
+			this.$refs.imagePreviewModal.show(this.$imgURL + image)
 		},
 
     async getList() {

@@ -2,7 +2,7 @@
     <div class="container">
   <div class="func-btn com-form">
 
-    <el-button type="primary" @click="getList = true">查询</el-button>
+    <el-button type="primary" @click="getList">查询</el-button>
   </div>
   <div class="list com-form">
     <div style="font-size: 16px;font-weight: bold; margin-bottom: 20px">会员管理</div>
