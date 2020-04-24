@@ -58,8 +58,8 @@ export default {
               // console.log(data)
               // localStorage.setItem('token', data.token)
               store.commit('saveToken', data)
-              localStorage.setItem('token', data.token)
-              localStorage.setItem('uid', data.uid)
+              localStorage.setItem('adminToken', data.token)
+              localStorage.setItem('adminId', data.uid)
               this.$router.push('/')
               this.$message({
                 message: '登录成功',

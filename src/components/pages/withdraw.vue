@@ -60,40 +60,64 @@ export default {
   },
   methods: {
     withdraw(row) {
-      this.$http.post('/v2/update/confirmWithdraw', {
-        id: row.id
-      }).then((res) => {
-        if (res.data.error_code === 200) {
-          this.$message({
-            type: 'success',
-            message: res.data.msg
+        this.$confirm("请确定已发送资金","提示",{
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+         this.$http.post('/v2/update/confirmWithdraw', {
+            id: row.id
+          }).then((res) => {
+            if (res.data.error_code === 200) {
+              this.$message({
+                type: 'success',
+                message: res.data.msg
+              })
+              this.getList()
+            } else {
+            this.$message({
+                type: 'error',
+                message: '未知错误'
+              })
+            }
           })
-          this.getList()
-        } else {
-         this.$message({
-            type: 'error',
-            message: '未知错误'
-          })
-        }
-      })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });          
+      });
+     
     },
      fail(row) {
-      this.$http.post('/v2/update/failWithdraw', {
-        id: row.id
-      }).then((res) => {
-        if (res.data.error_code === 200) {
-          this.$message({
-            type: 'success',
-            message: res.data.msg
+          this.$confirm("请确定已发送资金","提示",{
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+          this.$http.post('/v2/update/failWithdraw', {
+            id: row.id
+          }).then((res) => {
+            if (res.data.error_code === 200) {
+              this.$message({
+                type: 'success',
+                message: res.data.msg
+              })
+              this.getList()
+            } else {
+            this.$message({
+                type: 'error',
+                message: '未知错误'
+              })
+            }
           })
-          this.getList()
-        } else {
-         this.$message({
-            type: 'error',
-            message: '未知错误'
-          })
-        }
-      })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });          
+      });
+ 
     },
     async getList() {
       const url = "/v2/get/adminRecord"

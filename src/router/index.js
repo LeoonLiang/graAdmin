@@ -44,7 +44,7 @@ router.beforeEach((to, from, next) => {
     return next()
   }
 
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('adminToken')
 
   if(token) {
         next()

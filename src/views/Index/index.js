@@ -5,7 +5,7 @@ export default {
         leftNav
     },
     created() {
-            store.state.token = localStorage.getItem("token")
-            store.state.uid = localStorage.getItem("uid")
+            store.state.token = localStorage.getItem("adminIdToken")
+            store.state.uid = localStorage.getItem("adminId")
     },
 }

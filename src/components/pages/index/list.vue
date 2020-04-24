@@ -54,7 +54,7 @@ export default {
     async getList() {
       const url = "/v1/checkAll"
       let params = {
-        uid: localStorage.getItem('uid')
+        uid: localStorage.getItem('adminId')
       }
       const res = await this.$http.get(url, { params })
       if (res.status === 200) {
